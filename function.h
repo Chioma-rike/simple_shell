@@ -9,7 +9,7 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 
-#include "shelldata.h"
+#include "shell.h"
 
 extern char **environ;
 
