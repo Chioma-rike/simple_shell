@@ -1,17 +1,18 @@
-#include "function.h"
-#include "shell.h"
+#include "shelldata.h"
+
 /**
- * releaseMemory - This function helps to free a pointer
+ * bfree - frees a pointer and NULLs the address
+ * @ptr: address of the pointer to free
  *
- * @pointer: Pointer to free is passed
- * Return: void, it just frees and carry on
- **/
-void releaseMemory(void *pointer)
+ * Return: 1 if freed, otherwise 0.
+ */
+int bfree(void **ptr)
 {
-	if (pointer != NULL)
+	if (ptr && *ptr)
 	{
-		free(pointer);
-		pointer = NULL;
+		free(*ptr);
+		*ptr = NULL;
+		return (1);
 	}
-	pointer = NULL;
+	return (0);
 }
